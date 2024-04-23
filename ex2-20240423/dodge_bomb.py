@@ -50,6 +50,12 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: 
                 return
+            
+        if kk_rct.colliderect(bd_rct): #こうかとんと爆弾がぶつかったら　練習4
+            print("Game Over")
+            return
+        
+
         screen.blit(bg_img, [0, 0]) 
 
         key_lst = pg.key.get_pressed()
@@ -73,6 +79,7 @@ def main():
             kk_rct.move_ip(-sum_mv[0], -sum_mv[1])
                 #sum_mv[0], sum_mv[1] = 0, 0
         screen.blit(kk_img, kk_rct)
+        #爆弾に移動と表示
         bd_rct.move_ip(vx, vy)
         screen.blit(bd_img, bd_rct)
         yoko, tate = check_bound(bd_rct)

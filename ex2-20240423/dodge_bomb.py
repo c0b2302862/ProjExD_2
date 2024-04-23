@@ -6,6 +6,7 @@ import time
 
 
 WIDTH, HEIGHT = 1600, 900
+#辞書の設定
 DELTA = {
     pg.K_UP: (0, -5),
     pg.K_DOWN: (0, +5),
